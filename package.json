@@ -1,0 +1,14 @@
+{
+    "name": "web-news",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+      "start": "live-server",
+      "start2": "node index.js"
+    },
+    "dependencies": {
+        "live-server": "1.2.2",
+        "fastify": "4.15.0",
+        "@fastify/static": "6.9.0"
+    }
+  }

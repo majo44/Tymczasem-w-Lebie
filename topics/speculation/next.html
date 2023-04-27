@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+          background: white;
+          font-size: 3rem;
+        }
+      </style>
+</head>
+<body>
+    Next page 
+    <script type="module">
+        const out = document.createElement('div');
+        out.innerText = `Prerendered:  ${document.prerendering}`; // <--
+        document.body.appendChild(out);
+    </script>
+</body>
+</html>
