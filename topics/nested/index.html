@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>nested</title>
-  <style>
-    body {
+    <title>nested</title>
+    <link rel="stylesheet" href="../common.css">
+    <style>
+        html,
+        body {
 
-      font-size: 3rem;
+            .bar {
+                color: green;
+                @media (width < 1000px) {
+                    color: blue;
+                }
+            }
 
-      @media (width < 800px) {
-        font-size: 1.25rem;
-      }
-
-      .bar {
-        color: green;
-      }
-
-      &.foo {
-        background: white;
-      }
-
-    }
-  </style>
+            & .foo {
+                background: yellow;
+            }
+        }
+    </style>
 </head>
 <body class="foo">
-<div class="bar">Hello nested selectors</div>
+    <div class="bar">Hello nested selectors</div>
 </body>
 </html>

@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <style>
-    @layer green, blue;
+    <link rel="stylesheet" href="../common.css">
+    <style>
+        @layer green, blue;
 
-    /* @import url("./styles.css") layer(red); */
+        /* @import url("./styles.css") layer(red); */
 
-    @layer blue {
-      .layered-content {
-        color: blue;
-      }
-    }
-    @layer green {
-      .layered-content {
-        color: green;
-      }
-    }
-    body {
-      background: white;
-      font-size: 3rem;
-    }
-  </style>
+        @layer blue {
+            .layered-content {
+                color: blue;
+            }
+        }
+
+        @layer green {
+            .layered-content {
+                color: green;
+            }
+        }
+    </style>
 </head>
 <body>
   <div class="layered-content">Hello layers</div>

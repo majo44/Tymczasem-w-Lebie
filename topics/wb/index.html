@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="../common.css">
     <script type="webbundle">
     {
-        "source": "bundle.wbn",
-        "scopes": ["/web_modules"]
+        "source": "./bundle.wbn",
+        "scopes": ["/topics/wb/web_modules"]
     }
   </script>
-    <link rel="stylesheet" href="/web_modules/test.css">
+    <link rel="stylesheet" href="./web_modules/test.css">
 </head>
 <body>
-<div >WB</div>
-<script type="module">
-    import '/web_modules/test.js';
-</script>
+    <div>WB</div>
+    <script type="module" src="./web_modules/test.js"></script>
 </body>
 </html>
 

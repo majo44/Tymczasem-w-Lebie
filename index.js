@@ -1,27 +1,12 @@
-import * as url from 'url';
-import * as path from 'path';
+import liveServer from "live-server";
 
-import fastify from "fastify";
-import fStatic from '@fastify/static';
+liveServer.start({
+    middleware: [function(req, res, next) {
+        if (req.url.endsWith('.wbn')) {
+            res.setHeader('Content-Type', 'application/webbundle');
+            res.setHeader('X-Content-Type-Options', 'nosniff');
+        }
+        next();
+    }]
+});
 
-const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
-
-const app = fastify();
-
-app.addHook('onRequest', async (request, reply) => {
-    console.log(request.url);
-    if (request.url.endsWith('.wbn')) {
-        reply.type('application/webbundle');
-        reply.header('X-Content-Type-Options', 'nosniff');
-        reply.header('Cache-Control', 'max-age=2592000');
-    } else if (request.url.endsWith('.js')) {
-        reply.header('Cache-Control', 'max-age=2592000');
-    }
-})
-
-app.register(fStatic, {
-    root: path.join(__dirname, '')
-})
-
-
-await app.listen(8081);

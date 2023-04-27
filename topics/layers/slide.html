@@ -1,0 +1,68 @@
+
+<section>
+    <code>@layer</code>
+    <p class="t1">
+        czyli warstwy w css
+    </p>
+</section>
+<section data-background-iframe="/topics/layers"
+         data-background-interactive>
+</section>
+<section>
+    <div>kontrola kolejności</div>
+    <pre><code data-trim data-noescape>
+                @layer a, b, c;
+            </code></pre>
+    <div>
+        zagnieżdzanie warstwy
+        <pre><code data-trim data-noescape>
+                    @layer reset.type, default.type, reset.media, default.media;
+
+                    @layer defaults {
+                        /* un-layered defaults (higher priority) */
+                        :any-link { color: rebeccapurple; }
+
+                        /* layered defaults (lower priority) */
+                        @layer reset {
+                          a[href] { color: blue; }
+                        }
+                    }
+                </code></pre>
+    </div>
+</section>
+
+<section>
+    <div>
+        importowanie do warstwy
+        <pre>
+            <code data-trim data-noescape>
+            @import url('example.css') layer(foo);
+            </code>
+        </pre>
+    </div>
+    <div>
+        warstwy anonimowe
+        <pre>
+            <code data-trim data-noescape>
+            @layer { /* ... */ }
+            </code>
+        </pre>
+    </div>
+</section>
+<section>
+    <img height="600px" src="https://css-tricks.com/wp-content/uploads/2022/02/layers-tall-outlines2.svg">
+</section>
+<section>
+    <p class="ciu_embed" data-feature="css-cascade-layers" data-periods="future_1,current,past_1"
+       data-accessible-colours="false">
+        <picture>
+            <source type="image/webp" srcset="https://caniuse.bitsofco.de/image/css-cascade-layers.webp">
+            <source type="image/png" srcset="https://caniuse.bitsofco.de/image/css-cascade-layers.png">
+            <img src="https://caniuse.bitsofco.de/image/css-cascade-layers.jpg"
+                 alt="Data on support for the css-cascade-layers feature across the major browsers from caniuse.com">
+        </picture>
+    </p>
+    <a href="https://css-tricks.com/css-cascade-layers/">
+        A Complete Guide to CSS Cascade Layers
+    </a>
+</section>
