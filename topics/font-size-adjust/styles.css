@@ -1,0 +1,15 @@
+.times {
+    font-family: Times, serif;
+    font-size: 16px;
+}
+
+.verdana {
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+}
+
+.adjusted-times {
+    font-family: Times, serif;
+    font-size-adjust: 0.58;
+    font-size: 16px;
+}
